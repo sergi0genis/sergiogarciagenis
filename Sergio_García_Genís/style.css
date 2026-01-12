@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #f0f2f5;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: #1e1e1e;
+  color: white;
+  padding: 1.5rem 2rem;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+header p {
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+nav a {
+  color: #ccc;
+  margin-right: 1rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+nav a:hover {
+  color: white;
+}
+
+/* ===== CONTENT (SCROLL) ===== */
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+section h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* ===== SKILLS ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.skills-grid h3 {
+  margin-bottom: 0.5rem;
+}
+
+.skills-grid ul {
+  list-style: none;
+}
+
+.skills-grid li {
+  padding: 0.2rem 0;
+}
+
+/* ===== PROJECTS ===== */
+.project {
+  margin-bottom: 1.5rem;
+}
+
+.project a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #0066cc;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  nav a {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+}
