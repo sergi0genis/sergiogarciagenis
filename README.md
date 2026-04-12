@@ -1,11 +1,13 @@
-# Sergio García Genís — Research Portfolio
+# Sergio García Genís — Scientific Portfolio
 
-Personal academic & professional portfolio website for GitHub Pages.
+White / black / grey scientific editorial design. Built for GitHub Pages.
 
-## 🚀 Deploying to GitHub Pages
+---
 
-1. Create a new repository named `sergio-garcia-genis.github.io` (or any name).
-2. Upload all files keeping this structure:
+## 🚀 Deploy to GitHub Pages
+
+1. Create a repository — recommended name: `sergio-garcia-genis.github.io`
+2. Upload all files preserving this folder structure:
 
 ```
 ├── index.html
@@ -13,88 +15,114 @@ Personal academic & professional portfolio website for GitHub Pages.
 ├── script.js
 ├── README.md
 └── assets/
-    ├── profile.jpg          ← your profile photo
-    ├── Sergio_Garcia_CV.pdf ← your CV for download
-    ├── gallery/             ← lab & results photos
-    │   ├── dhm_fringe.jpg
+    ├── profile.jpg              ← your photo (square, min 400 × 400 px)
+    ├── Sergio_Garcia_CV.pdf     ← downloadable CV
+    ├── research/                ← images for Focus Areas section
+    │   ├── dhm_fringes.jpg
+    │   ├── phase_map.jpg
     │   └── ...
-    └── projects/            ← project cover images
-        └── dhm_setup.jpg
+    ├── thesis/                  ← figures for the Thesis blog
+    │   ├── setup_photo.jpg
+    │   ├── fringes.jpg
+    │   └── ...
+    ├── projects/                ← project cover images
+    │   └── dhm_setup.jpg
+    └── gallery/                 ← photo grid
+        ├── optical_bench.jpg
+        └── ...
 ```
 
-3. Go to **Settings → Pages → Source → Deploy from branch → main → / (root)**.
-4. Your site will be live at `https://<your-username>.github.io/`.
+3. Go to **Settings → Pages → Source → Deploy from branch → `main` → `/ (root)`**
+4. Site will be live at `https://sergio-garcia-genis.github.io/`
 
 ---
 
-## ✏️ Updating Content
+## ✏️ Updating content — only edit `script.js`
 
-All content is controlled from **`script.js`** — no HTML editing needed.
-
-### Add a new project
-
-Open `script.js` and add an object to the `PROJECTS` array:
+### Add a research image (Focus Areas)
 
 ```js
+// In FOCUS_AREAS array:
 {
-  date: "Jan 2026 – Present",
-  title: "Your Project Title",
-  company: "Institution or Company",
-  desc: "Description. You can use <strong>HTML</strong> here.",
-  tags: ["Tag1", "Tag2", "Tag3"],
-  image: "assets/projects/photo.jpg",   // or "" for emoji placeholder
-  imageAlt: "Photo description",
-  emoji: "🔭"   // shown only when no image
+  title: 'Digital Holographic Microscopy',
+  image: 'assets/research/dhm_fringes.jpg',  // ← add path here
+  ...
 }
 ```
 
-### Add a publication or paper
+### Add a figure to the Thesis blog
 
-Add an object to the `PUBLICATIONS` array:
+Three block types available:
 
 ```js
+// Plain text section
+{ type: 'text', heading: 'Section Title', body: 'Text content...' }
+
+// Single figure with caption
+{ type: 'figure',
+  src:     'assets/thesis/fig1.jpg',
+  alt:     'Alt text for accessibility',
+  label:   'Fig. 1',
+  caption: 'Caption describing the figure.' }
+
+// Two figures side by side
+{ type: 'figure-row', figures: [
+    { src: 'assets/thesis/a.jpg', alt: '...', label: 'Fig. 2a', caption: '...' },
+    { src: 'assets/thesis/b.jpg', alt: '...', label: 'Fig. 2b', caption: '...' },
+]}
+```
+
+### Add a paper / future publication
+
+```js
+// In FUTURE_WORK array:
 {
-  year: "2026",
-  title: "Full Paper Title",
-  venue: "Journal of Optics / Conference / Institution",
-  desc: "Brief abstract or description.",
+  status:      'progress',       // 'planned' | 'progress' | 'review' | 'published'
+  statusLabel: 'In Progress',
+  year:        '2026',
+  title:       'Your paper title',
+  venue:       'Optics Express',
+  desc:        'Brief description of the work.',
   links: [
-    { label: "DOI",  url: "https://doi.org/..." },
-    { label: "PDF",  url: "assets/papers/paper.pdf" },
-  ]
+    { label: 'Preprint', url: 'https://arxiv.org/abs/...' },
+    { label: 'DOI',      url: 'https://doi.org/...' },
+  ],
+  collab: 'Collaborating institution',
 }
 ```
 
-### Add gallery images
-
-1. Copy your image to `assets/gallery/yourimage.jpg`.
-2. Add an entry to the `GALLERY` array in `script.js`:
+### Add gallery photos
 
 ```js
-{ src: "assets/gallery/yourimage.jpg", caption: "Phase map of sample X" }
+// In GALLERY array:
+{ src: 'assets/gallery/photo.jpg', caption: 'Short description' }
 ```
 
 ---
 
-## 🎨 Customising the look
+## 🎨 Change colours
 
-All colours are CSS variables at the top of `style.css`:
+All tokens live at the top of `style.css`:
 
 ```css
---accent:   #5ec4ff;   /* main cyan / laser blue */
---accent2:  #00e5b0;   /* secondary teal-green */
---bg:       #0a0e14;   /* page background */
+:root {
+  --white:    #ffffff;
+  --off:      #f6f6f4;    /* alt section background */
+  --grey-500: #8e8d87;    /* secondary text         */
+  --grey-900: #1c1c1a;    /* headings               */
+  --black:    #0e0e0c;    /* hero + contact bg      */
+}
 ```
-
-Change these to restyle the entire site instantly.
 
 ---
 
-## 📁 Asset checklist before going live
+## ✅ Pre-launch checklist
 
-- [ ] `assets/profile.jpg` — your photo (square, min 400×400 px)
+- [ ] `assets/profile.jpg` — your photo
 - [ ] `assets/Sergio_Garcia_CV.pdf` — downloadable CV
 - [ ] Update LinkedIn URL in `index.html` (search `linkedin.com/in/`)
 - [ ] Update GitHub URL in `index.html` (search `github.com/sergio`)
-- [ ] Add gallery images and uncomment entries in `GALLERY`
-- [ ] Add thesis PDF link in `PUBLICATIONS[0].links`
+- [ ] Set `image:` paths in `FOCUS_AREAS`
+- [ ] Set `src:` paths in `THESIS.sections` figures
+- [ ] Fill `GALLERY` array (uncomment example lines)
+- [ ] Update `FUTURE_WORK` status dots as papers progress

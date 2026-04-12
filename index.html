@@ -7,264 +7,297 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- ──────── NAV ──────── -->
+  <!-- grain texture overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ════════════════════════════════════
+       NAV
+  ════════════════════════════════════ -->
   <nav id="navbar">
-    <div class="nav-logo">SG<span class="accent">.</span></div>
-    <ul class="nav-links">
+    <a href="#hero" class="nav-wordmark">S. García Genís</a>
+    <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#research">Research</a></li>
+      <li><a href="#thesis">Thesis</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#publications">Publications</a></li>
+      <li><a href="#future">Future Work</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu">
+      <span></span><span></span>
     </button>
   </nav>
 
-  <!-- ──────── HERO ──────── -->
+  <!-- ════════════════════════════════════
+       HERO
+  ════════════════════════════════════ -->
   <header id="hero">
-    <div class="hero-bg">
-      <canvas id="wave-canvas"></canvas>
-    </div>
+    <canvas id="wave-canvas" aria-hidden="true"></canvas>
     <div class="hero-content">
-      <p class="hero-tag">Optical Engineer · R&D Photonics</p>
-      <h1>Sergio García<br /><span class="accent">Genís</span></h1>
-      <p class="hero-sub">
-        Specialised in Digital Holographic Microscopy (DHM-QPI) and near-infrared optical systems.
-        Designing instruments that see beyond the visible.
+      <p class="hero-kicker fade-in d1">Optical Engineer · R&D Photonics · València, Spain</p>
+      <h1 class="fade-in d2">
+        Sergio<br />
+        <em>García Genís</em>
+      </h1>
+      <p class="hero-tagline fade-in d3">
+        Designing instruments that measure light itself —<br />
+        specialised in Digital Holographic Microscopy<br />
+        and near-infrared optical systems.
       </p>
-      <div class="hero-cta">
-        <a href="#research" class="btn-primary">View Research</a>
-        <a href="assets/Sergio_Garcia_CV.pdf" class="btn-outline" target="_blank" download>Download CV</a>
+      <div class="hero-actions fade-in d4">
+        <a href="#research" class="btn-outline-w">View Research</a>
+        <a href="assets/Sergio_Garcia-Genis_CV_Resume.pdf" download target="_blank" class="btn-ghost-w">Download CV ↗</a>
       </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-num">0.07</span>
-          <span class="stat-label">rad phase resolution (λ/90)</span>
+      <div class="hero-metrics fade-in d5">
+        <div class="metric">
+          <span class="metric-val">0.07 rad</span>
+          <span class="metric-label">Phase resolution (λ/90)</span>
         </div>
-        <div class="stat">
-          <span class="stat-num">NIR</span>
-          <span class="stat-label">DHM system built & validated</span>
+        <div class="metric-sep"></div>
+        <div class="metric">
+          <span class="metric-val">NIR DHM</span>
+          <span class="metric-label">System built &amp; validated</span>
         </div>
-        <div class="stat">
-          <span class="stat-num">EU</span>
-          <span class="stat-label">DISCAMNIL / NextGenEU project</span>
+        <div class="metric-sep"></div>
+        <div class="metric">
+          <span class="metric-val">EU</span>
+          <span class="metric-label">DISCAMNIL · NextGenEU</span>
         </div>
       </div>
     </div>
-    <div class="scroll-hint">scroll<span class="scroll-line"></span></div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span class="scroll-label">scroll</span>
+      <span class="scroll-bar"></span>
+    </div>
   </header>
 
-  <!-- ──────── ABOUT ──────── -->
+  <!-- ════════════════════════════════════
+       01 · ABOUT
+  ════════════════════════════════════ -->
   <section id="about">
-    <div class="container two-col">
-      <div class="about-text">
-        <span class="section-label">01 — About</span>
-        <h2>Building instruments that<br /><em>measure light itself</em></h2>
-        <p>
-          I'm an Optical Engineer with a Master's in Advanced Physics (Photonics) from the
-          University of Valencia. My work lives at the intersection of experimental optics,
-          computational imaging, and precision metrology.
-        </p>
-        <p>
-          My MSc thesis — awarded with maximum grade — documents the full design and
-          implementation of a telecentric NIR Digital Holographic Microscope capable of
-          characterising nano-structured metasurfaces with sub-wavelength phase sensitivity.
-        </p>
-        <p>
-          I enjoy building things from scratch: aligning optical benches, writing reconstruction
-          algorithms, and turning raw interference fringes into quantitative phase maps.
-        </p>
-        <div class="skills-grid">
-          <div class="skill-group">
-            <h4>Experimental</h4>
-            <ul>
-              <li>Interferometry</li>
-              <li>DHM / QPI</li>
-              <li>Optical alignment</li>
-            </ul>
+    <div class="wrap">
+
+      <div class="section-label">
+        <span class="sec-num">01</span>
+        <span class="sec-name">About</span>
+      </div>
+
+      <div class="about-layout">
+        <div class="about-photo-col">
+          <div class="about-photo reveal">
+            <!-- Put your photo at assets/profile.jpg -->
+            <img src="assets/profile.jpg" alt="Sergio García Genís"
+                 onerror="this.style.display='none';document.getElementById('photo-fallback').style.display='flex'"/>
+            <div class="photo-fallback" id="photo-fallback">S·G</div>
           </div>
-          <div class="skill-group">
-            <h4>Software</h4>
-            <ul>
-              <li>MATLAB</li>
-              <li>Python</li>
-              <li>Git / GitHub</li>
-            </ul>
+          <ul class="about-contact reveal rd1">
+            <li>
+              <span class="contact-key">email</span>
+              <a href="mailto:sergiogenisgarcia@gmail.com">sergiogenisgarcia@gmail.com</a>
+            </li>
+            <li>
+              <span class="contact-key">phone</span>
+              <a href="tel:+34647194830">+34 647 194 830</a>
+            </li>
+            <li>
+              <span class="contact-key">linkedin</span>
+              <a href="https://linkedin.com/in/sergio-garcia-genis" target="_blank" rel="noopener">sergio-garcia-genis ↗</a>
+            </li>
+            <li>
+              <span class="contact-key">github</span>
+              <a href="https://github.com/sergio-garcia-genis" target="_blank" rel="noopener">sergio-garcia-genis ↗</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="about-text-col">
+          <h2 class="reveal">About me</h2>
+          <div class="about-body reveal rd1">
+            <p>I'm an Optical Engineer with a Master's in Advanced Physics (Photonics) from the University of Valencia. My work sits at the intersection of experimental optics, computational imaging, and precision metrology.</p>
+            <p>My MSc thesis — awarded with maximum grade — documents the full design and implementation of a telecentric NIR Digital Holographic Microscope capable of characterising nano-structured metasurfaces with sub-wavelength phase sensitivity, within the EU-funded DISCAMNIL project.</p>
+            <p>I enjoy building from scratch: aligning optical benches, writing reconstruction pipelines, and turning raw interference fringes into quantitative phase maps.</p>
           </div>
-          <div class="skill-group">
-            <h4>Optical Design</h4>
-            <ul>
-              <li>Zemax OpticStudio</li>
-              <li>Tidy3D (FDTD)</li>
-              <li>LabVIEW</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h4>Languages</h4>
-            <ul>
-              <li>Spanish — Native</li>
-              <li>Catalan — C1</li>
-              <li>English — B2</li>
-            </ul>
+
+          <div class="skills-grid reveal rd2">
+            <div class="skill-col">
+              <h4>Experimental</h4>
+              <ul>
+                <li>Interferometry</li>
+                <li>DHM · QPI</li>
+                <li>Optical alignment</li>
+              </ul>
+            </div>
+            <div class="skill-col">
+              <h4>Programming</h4>
+              <ul>
+                <li>MATLAB</li>
+                <li>Python</li>
+                <li>Git / GitHub</li>
+              </ul>
+            </div>
+            <div class="skill-col">
+              <h4>Optical Design</h4>
+              <ul>
+                <li>Zemax OpticStudio</li>
+                <li>Tidy3D · FDTD</li>
+                <li>LabVIEW</li>
+              </ul>
+            </div>
+            <div class="skill-col">
+              <h4>Languages</h4>
+              <ul>
+                <li>English — B2</li>
+                <li>Spanish — Native</li>
+                <li>Catalan — C1</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="about-aside">
-        <div class="profile-card">
-          <!-- Replace with your actual photo: assets/profile.jpg -->
-          <div class="profile-img-wrap">
-            <img src="assets/profile.jpg" alt="Sergio García Genís" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
-            <div class="profile-placeholder">SG</div>
-          </div>
-          <div class="profile-info">
-            <p><span class="icon">📍</span> València, Spain</p>
-            <p><span class="icon">🎓</span> MSc Photonics, UV</p>
-            <p><span class="icon">🔬</span> DHM · Metasurfaces · NIR</p>
-            <p><span class="icon">📧</span> <a href="mailto:sergiogenisgarcia@gmail.com">sergiogenisgarcia@gmail.com</a></p>
-          </div>
-        </div>
-      </div>
+      </div><!-- /about-layout -->
+
     </div>
   </section>
 
-  <!-- ──────── RESEARCH ──────── -->
-  <section id="research" class="dark-section">
-    <div class="container">
-      <span class="section-label light">02 — Research</span>
-      <h2>Focus Areas</h2>
-      <div class="research-grid">
-
-        <div class="research-card">
-          <div class="rc-icon">◈</div>
-          <h3>Digital Holographic Microscopy</h3>
-          <p>
-            Design and implementation of telecentric off-axis DHM systems for quantitative phase
-            imaging (QPI). My thesis system achieved a lateral phase resolution of
-            <strong>0.07 rad (~λ/90)</strong>, enabling nano-structure discrimination.
-          </p>
-          <div class="rc-tags"><span>DHM</span><span>QPI</span><span>Interferometry</span></div>
-        </div>
-
-        <div class="research-card">
-          <div class="rc-icon">◈</div>
-          <h3>Metasurface Characterisation</h3>
-          <p>
-            Experimental validation of DHM metrological performance applied to multiple dielectric
-            metasurfaces within the EU-funded <strong>DISCAMNIL</strong> project (NextGeneration EU).
-            Precise phase discrimination of sub-wavelength nano-structures.
-          </p>
-          <div class="rc-tags"><span>Metasurfaces</span><span>Nanophotonics</span><span>Metrology</span></div>
-        </div>
-
-        <div class="research-card">
-          <div class="rc-icon">◈</div>
-          <h3>NIR Optical Systems</h3>
-          <p>
-            Design and alignment of near-infrared optical instruments. Experience with telecentric
-            and afocal configurations, beam-splitter Mach–Zehnder geometries, and camera-coupled
-            interferometric setups.
-          </p>
-          <div class="rc-tags"><span>NIR</span><span>Zemax</span><span>Optical Design</span></div>
-        </div>
-
-        <div class="research-card">
-          <div class="rc-icon">◈</div>
-          <h3>Computational Imaging</h3>
-          <p>
-            Development of hologram reconstruction and phase-unwrapping software pipelines.
-            Numerical propagation methods (angular spectrum, Fresnel), spatial filtering,
-            and automated phase-aberration compensation.
-          </p>
-          <div class="rc-tags"><span>MATLAB</span><span>Python</span><span>Phase Retrieval</span></div>
-        </div>
-
+  <!-- ════════════════════════════════════
+       02 · RESEARCH FOCUS AREAS
+  ════════════════════════════════════ -->
+  <section id="research" class="bg-off">
+    <div class="wrap">
+      <div class="section-label">
+        <span class="sec-num">02</span>
+        <span class="sec-name">Research Focus Areas</span>
       </div>
-    </div>
-  </section>
-
-  <!-- ──────── PROJECTS ──────── -->
-  <section id="projects">
-    <div class="container">
-      <span class="section-label">03 — Projects</span>
-      <h2>Selected Work</h2>
-      <p class="section-intro">
-        Each entry below is a project or role. Add new ones in <code>script.js</code> → <code>PROJECTS</code> array.
+      <p class="section-intro reveal">
+        Four core competencies, each illustrated with representative experimental images.<br/>
+        Add images in <code>script.js → FOCUS_AREAS[n].image</code>.
       </p>
+      <div class="focus-grid" id="focus-grid">
+        <!-- rendered by script.js -->
+      </div>
+    </div>
+  </section>
 
+  <!-- ════════════════════════════════════
+       03 · THESIS BLOG
+  ════════════════════════════════════ -->
+  <section id="thesis">
+    <div class="wrap">
+      <div class="section-label">
+        <span class="sec-num">03</span>
+        <span class="sec-name">Master's Thesis</span>
+      </div>
+      <p class="section-intro reveal">
+      </p>
+      <article class="thesis-post" id="thesis-post">
+        <!-- rendered by script.js -->
+      </article>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       04 · PROJECTS & EXPERIENCE
+  ════════════════════════════════════ -->
+  <section id="projects" class="bg-off">
+    <div class="wrap">
+      <div class="section-label">
+        <span class="sec-num">04</span>
+        <span class="sec-name">Projects &amp; Experience</span>
+      </div>
+      <p class="section-intro reveal">
+        Professional roles and research projects.<br/>
+        Add entries in <code>script.js → PROJECTS</code>.
+      </p>
       <div class="projects-list" id="projects-list">
-        <!-- Populated by script.js -->
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ──────── PUBLICATIONS ──────── -->
-  <section id="publications" class="dark-section">
-    <div class="container">
-      <span class="section-label light">04 — Publications & Thesis</span>
-      <h2>Academic Output</h2>
-      <div class="pub-list" id="pub-list">
-        <!-- Populated by script.js -->
+        <!-- rendered by script.js -->
       </div>
     </div>
   </section>
 
-  <!-- ──────── GALLERY ──────── -->
-  <section id="gallery">
-    <div class="container">
-      <span class="section-label">05 — Gallery</span>
-      <h2>Lab & Results</h2>
-      <p class="section-intro">
-        Add images to the <code>assets/gallery/</code> folder and register them in <code>script.js</code> → <code>GALLERY</code>.
+  <!-- ════════════════════════════════════
+       05 · FUTURE RESEARCH
+  ════════════════════════════════════ -->
+  <section id="future">
+    <div class="wrap">
+      <div class="section-label">
+        <span class="sec-num">05</span>
+        <span class="sec-name">Future Research &amp; Publications</span>
+      </div>
+      <p class="section-intro reveal">
+        Planned papers, ongoing research lines, and upcoming publications.<br/>
+        Add entries in <code>script.js → FUTURE_WORK</code>.
+      </p>
+      <div class="future-list" id="future-list">
+        <!-- rendered by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       06 · GALLERY
+  ════════════════════════════════════ -->
+  <section id="gallery" class="bg-off">
+    <div class="wrap">
+      <div class="section-label">
+        <span class="sec-num">06</span>
+        <span class="sec-name">Gallery</span>
+      </div>
+      <p class="section-intro reveal">
+        Lab setups, optical systems, and experimental results.<br/>
+        Add images in <code>script.js → GALLERY</code>.
       </p>
       <div class="gallery-grid" id="gallery-grid">
-        <!-- Populated by script.js -->
+        <!-- rendered by script.js -->
       </div>
     </div>
   </section>
 
-  <!-- ──────── CONTACT ──────── -->
-  <section id="contact" class="dark-section">
-    <div class="container contact-wrap">
-      <span class="section-label light">06 — Contact</span>
-      <h2>Let's Connect</h2>
-      <p class="contact-sub">
-        Open to research collaborations, PhD opportunities, and industry R&D roles in photonics and optical engineering.
+  <!-- ════════════════════════════════════
+       07 · CONTACT
+  ════════════════════════════════════ -->
+  <section id="contact" class="bg-dark">
+    <div class="wrap">
+      <div class="section-label inverted">
+        <span class="sec-num">07</span>
+        <span class="sec-name">Contact</span>
+      </div>
+      <h2 class="contact-headline reveal">Let's Connect</h2>
+      <p class="contact-sub reveal rd1">
+        Open to research collaborations, PhD opportunities, and R&D roles<br/>
+        in photonics, optical engineering, and computational imaging.
       </p>
-      <div class="contact-links">
-        <a href="mailto:sergiogenisgarcia@gmail.com" class="contact-pill">
-          <span>✉</span> sergiogenisgarcia@gmail.com
-        </a>
-        <a href="https://www.linkedin.com/in/sergio-garcia-genis" class="contact-pill" target="_blank" rel="noopener">
-          <span>in</span> LinkedIn
-        </a>
-        <a href="https://github.com/sergio-garcia-genis" class="contact-pill" target="_blank" rel="noopener">
-          <span>⌥</span> GitHub
-        </a>
-        <a href="tel:+34647194830" class="contact-pill">
-          <span>☏</span> +34 647 194 830
-        </a>
-      </div>
+      <ul class="contact-links" id="contact-links">
+        <li class="reveal rd1"><a href="mailto:sergiogenisgarcia@gmail.com">sergiogenisgarcia@gmail.com <span>↗</span></a></li>
+        <li class="reveal rd2"><a href="https://linkedin.com/in/sergio-garcia-genis" target="_blank" rel="noopener">LinkedIn <span>↗</span></a></li>
+        <li class="reveal rd3"><a href="https://github.com/sergio-garcia-genis" target="_blank" rel="noopener">GitHub <span>↗</span></a></li>
+        <li class="reveal rd4"><a href="tel:+34647194830">+34 647 194 830 <span>↗</span></a></li>
+      </ul>
     </div>
   </section>
 
-  <!-- ──────── FOOTER ──────── -->
-  <footer>
-    <p>© <span id="year"></span> Sergio García Genís · Optical Engineer · Built with ♦ and GitHub Pages</p>
+  <!-- ════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════ -->
+  <footer class="bg-dark">
+    <div class="foot-inner">
+      <span>Sergio García Genís · Optical Engineer · Valencia</span>
+      <span>© <span id="year"></span> · GitHub Pages</span>
+    </div>
   </footer>
 
-  <!-- ──────── LIGHTBOX ──────── -->
-  <div id="lightbox" class="lightbox hidden">
-    <button id="lb-close">✕</button>
-    <img id="lb-img" src="" alt="" />
-    <p id="lb-caption"></p>
+  <!-- ════════════════════════════════════
+       LIGHTBOX
+  ════════════════════════════════════ -->
+  <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button id="lb-close" aria-label="Close lightbox">✕</button>
+    <figure id="lb-figure">
+      <img id="lb-img" src="" alt="" />
+      <figcaption id="lb-caption"></figcaption>
+    </figure>
   </div>
 
   <script src="script.js"></script>
