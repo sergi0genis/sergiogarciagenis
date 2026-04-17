@@ -206,7 +206,7 @@ const THESIS = {
  
     {
       type: 'figure',
-      src:     '',   // ← assets/thesis/fig3_setup_photo.jpg
+      src:     'assets/thesis/fig3.png',   // ← assets/thesis/fig3_setup_photo.jpg
       alt:     'NIR DHM optical bench — experimental setup photo',
       label:   'Fig. 3',
       caption: 'Experimental NIR DHM setup on optical bench. Mach–Zehnder configuration with Mitutoyo 20× NIR objective, 200 mm tube lens, and OnsemiТМ AR2020 CMOS sensor.',
@@ -232,13 +232,13 @@ const THESIS = {
       type: 'figure-row',
       figures: [
         {
-          src:     '',   // ← assets/thesis/fig4a_orders_overlap.jpg
+          src:     'assets/thesis/fig4a.png',   // ← assets/thesis/fig4a_orders_overlap.jpg
           alt:     'Fourier spectrum with overlapping orders',
           label:   'Fig. 4a',
           caption: 'Orders overlapping (insufficient tilt): 3u\'c = 0.071 µm⁻¹, order separation = 0.049 µm⁻¹.',
         },
         {
-          src:     '',   // ← assets/thesis/fig4b_orders_separated.jpg
+          src:     'assets/thesis/fig4b.png',   // ← assets/thesis/fig4b_orders_separated.jpg
           alt:     'Fourier spectrum with separated orders',
           label:   'Fig. 4b',
           caption: 'Correct separation (θ ≈ 7°): order centroid distance = 0.161 µm⁻¹ > 3u\'c.',
@@ -272,28 +272,18 @@ const THESIS = {
  
     {
       type: 'figure',
-      src:     '',   // ← assets/thesis/fig5_reconstruction_flowchart.jpg
+      src:     'assets/thesis/fig5.png',   // ← assets/thesis/fig5_reconstruction_flowchart.jpg
       alt:     'Hologram reconstruction pipeline flowchart',
       label:   'Fig. 5',
       caption: 'Complete reconstruction pipeline: Fourier filtering → +1 order isolation → background normalisation → amplitude and phase recovery.',
     },
  
     {
-      type: 'figure-row',
-      figures: [
-        {
-          src:     '',   // ← assets/thesis/fig6a_simulated_hologram.jpg
-          alt:     'Simulated USAF-1951 hologram',
-          label:   'Fig. 6a',
-          caption: 'Simulated off-axis hologram of a USAF-1951 target (Δφ = 1.25 rad, λ = 852 nm).',
-        },
-        {
-          src:     '',   // ← assets/thesis/fig6b_reconstructed_phase.jpg
-          alt:     'Reconstructed phase map of simulated hologram',
-          label:   'Fig. 6b',
-          caption: 'Reconstructed phase map. Phase step matches the design value Δφ introduced in simulation.',
-        },
-      ],
+      type: 'figure',
+      src:     'assets/thesis/fig6.png',   // ← assets/thesis/fig6a_simulated_hologram.jpg
+      alt:     'Simulated USAF-1951 hologram',
+      label:   'Fig. 6',
+      caption: '(a-c) Simulated off-axis hologram of a USAF-1951 target (Δφ = 1.25 rad, λ = 852 nm). [d-e] Reconstructed phase map. In (f) phase step matches the design value Δφ introduced in simulation.',  
     },
  
     // ── 7. METROLOGICAL CALIBRATION ──────────────────────────────
@@ -321,13 +311,13 @@ const THESIS = {
       type: 'figure-row',
       figures: [
         {
-          src:     '',   // ← assets/thesis/fig7a_usaf_3d.jpg
+          src:     'assets/thesis/fig7a.png',   // ← assets/thesis/fig7a_usaf_3d.jpg
           alt:     '3D reconstruction of 350 nm USAF target',
           label:   'Fig. 7a',
           caption: '3D surface reconstruction of the 350 nm USAF-1951 phase target at λ = 852 nm.',
         },
         {
-          src:     '',   // ← assets/thesis/fig7b_double_gaussian.jpg
+          src:     'assets/thesis/fig7b.png',   // ← assets/thesis/fig7b_double_gaussian.jpg
           alt:     'Double-Gaussian PDF fit for phase step extraction',
           label:   'Fig. 7b',
           caption: 'Double-Gaussian fit to the phase histogram. Δφ is extracted from the distance between Gaussian centres.',
@@ -337,7 +327,7 @@ const THESIS = {
  
     {
       type: 'figure',
-      src:     '',   // ← assets/thesis/fig8_error_analysis.jpg
+      src:     'assets/thesis/fig8.png',   // ← assets/thesis/fig8_error_analysis.jpg
       alt:     'Phase measurement error vs AFM reference',
       label:   'Fig. 8',
       caption: 'Deviation of DHM phase measurements from AFM reference values. Mean residual: −0.012 rad at 852 nm; σφ = ±0.07 rad (≈ λ/90).',
@@ -366,24 +356,26 @@ const THESIS = {
     {
       type: 'figure-row',
       figures: [
+       
         {
-          src:     '',   // ← assets/thesis/fig9a_rbc_hologram.jpg
-          alt:     'Hologram of red blood cells',
-          label:   'Fig. 9a',
-          caption: 'Recorded hologram of a red blood cell sample.',
-        },
-        {
-          src:     '',   // ← assets/thesis/fig9b_rbc_phase.jpg
+          src:     'assets/thesis/fig9a.png',   // ← assets/thesis/fig9b_rbc_phase.jpg
           alt:     'QPI phase map of red blood cells',
-          label:   'Fig. 9b',
-          caption: 'Quantitative phase map of three isolated red blood cells. Phase shift Δφ = 3.2 ± 0.09 rad — within the healthy range.',
+          label:   'Fig. 9a',
+          caption: 'Quantitative phase map of three isolated red blood cells.',
         },
+       {
+          src:     'assets/thesis/fig9b.png',   // ← assets/thesis/fig9a_rbc_hologram.jpg
+          alt:     'Blood cells QPI phase shift',
+          label:   'Fig. 9b',
+          caption: 'Phase shift Δφ = 3.2 ± 0.09 rad — within the healthy range.',
+        },
+        
       ],
     },
  
     {
       type: 'figure',
-      src:     '',   // ← assets/thesis/fig10_fzp_phase.jpg
+      src:     'assets/thesis/fig10.png',   // ← assets/thesis/fig10_fzp_phase.jpg
       alt:     'Phase map and 3D reconstruction of Fresnel Zone Plate',
       label:   'Fig. 10',
       caption: 'Reconstructed phase map and 3D surface of the binary Fresnel Zone Plate. Measured phase step Δφ = 3.14 ± 0.09 rad; focal length f = 2.8 ± 0.1 cm.',
@@ -401,42 +393,15 @@ const THESIS = {
       <br><br>
       The samples characterised in this thesis are <strong>beam deflectors (BD)</strong> designed by
       PhotonicSensors &amp; Algorithms S.L. using Tidy3D FDTD electromagnetic simulations at
-      λ = 850 nm. The design specifies a linear phase ramp of 2π rad per super-cell (period ≈ 21.5 µm),
+      λ = 850 nm. The design specifies a linear phase ramp of 2π rad per super-cell,
       redirecting a normally incident plane wave into a single diffraction order.
       <br><br>
-      DHM measurements of the fabricated BDs revealed a periodic phase profile with a mean period of
-      21.4 µm — matching the nominal design — and a measured phase step of Δφ = 2.11 ± 0.07 rad per
-      super-cell. The deviation from the design value of 2π rad and the curvature of the phase ramp
+      DHM measurements of the fabricated BDs revealed a periodic phase profile with a mean period that matches the nominal design — and a measured phase step per
+      super-cell that need to be improved because of the lack of efficency . The deviation from the design value of 2π rad and the curvature of the phase ramp
       (rather than the expected linear profile) indicate fabrication imperfections in the nano-pillar
       diameters. These results provide a direct, quantitative feedback for design correction in
       subsequent fabrication iterations, demonstrating DHM as a powerful metrology tool for
       industrial metasurface development within the EU DISCAMNIL project.`,
-    },
- 
-    {
-      type: 'figure-row',
-      figures: [
-        {
-          src:     '',   // ← assets/thesis/fig11a_metasurface_design.jpg
-          alt:     'FDTD simulation of beam deflector phase profile',
-          label:   'Fig. 11a',
-          caption: 'FDTD-simulated phase profile for one BD super-cell (Tidy3D, λ = 850 nm).',
-        },
-        {
-          src:     '',   // ← assets/thesis/fig11b_sem_image.jpg
-          alt:     'SEM image of fabricated metasurface',
-          label:   'Fig. 11b',
-          caption: 'SEM image of the fabricated dielectric nano-pillars at the boundary between two BD super-cells.',
-        },
-      ],
-    },
- 
-    {
-      type: 'figure',
-      src:     '',   // ← assets/thesis/fig12_metasurface_phase_map.jpg
-      alt:     'DHM phase map and profile of beam deflector metasurface',
-      label:   'Fig. 12',
-      caption: '2D/3D quantitative phase map of a beam deflector chip. Measured phase step Δφ = 2.11 ± 0.07 rad per super-cell (design: 2π rad). Period = 21.4 µm (design: 21.5 µm).',
     },
  
     // ── 10. CONCLUSIONS ──────────────────────────────────────────
@@ -482,7 +447,7 @@ const PROJECTS = [
                 developed in MATLAB and Python. Experimental validation applied to multiple dielectric
                 metasurfaces for advanced material characterisation.`,
     tags:      ['DHM', 'NIR', 'MATLAB', 'Python', 'Metasurfaces', 'EU Project'],
-    image:     '',   // ← e.g. "assets/projects/dhm_setup.jpg"
+    image:     'assets/projects/chip_2_6_.jpeg',   // ← e.g. "assets/projects/dhm_setup.jpg"
     imageAlt:  'NIR DHM setup on optical bench',
     emoji:     '◌',
   },
@@ -495,7 +460,7 @@ const PROJECTS = [
                 experimental design, data acquisition and simulations. Work culminated in a joint
                 Master's Thesis <strong>awarded with maximum grade</strong>.`,
     tags:      ['Interferometry', 'Zemax', 'Optical Alignment', 'LabVIEW'],
-    image:     '',   // ← e.g. "assets/projects/lab_uv.jpg"
+    image:     'assets/thesis/fig3.png',   // ← e.g. "assets/projects/lab_uv.jpg"
     imageAlt:  'University of Valencia Optics Laboratory',
     emoji:     '▣',
   },
@@ -524,28 +489,17 @@ const PROJECTS = [
    ╚════════════════════════════════════════════════════════════════╝ */
 const FUTURE_WORK = [
   {
-    status:      'planned',
-    statusLabel: 'Planned',
+    status:      'in_preparation',
+    statusLabel: 'In Preparation',
     year:        '2026',
-    title:       'Quantitative Phase Imaging of Dielectric Metasurfaces in the NIR: Metrological Validation',
+    title:       'Experimental Validation of Dielectric Spaceplates via NIR Digital Holography',
     venue:       'Target: Optics Express / Optics Letters',
-    desc:        `Journal article derived from the MSc thesis. Full experimental characterisation of
-                  the NIR DHM system, phase noise analysis, and metrological validation on three
-                  metasurface designs. Manuscript in preparation.`,
+    desc:        `Journal article focusing on the characterisation of phase-gradient spaceplates. 
+                  It includes a comparative analysis between large-scale FDTD simulations (Tidy3D) 
+                  and experimental wavefront reconstruction using a custom NIR-DHM. 
+                  Validating space-compression factors and diffraction efficiency for integrated photonics.`,
     links:       [],
-    collab:      'Photonicsensors & Algorithms S.L. · University of Valencia',
-  },
-  {
-    status:      'planned',
-    statusLabel: 'Planned',
-    year:        '2026',
-    title:       'Aberration Compensation Strategies in Telecentric Off-Axis DHM',
-    venue:       'Target: Journal of Optics',
-    desc:        `Comparative study of numerical aberration compensation methods (Zernike fitting,
-                  reference subtraction, iterative optimisation) applied to telecentric DHM systems.
-                  Benchmarking phase flatness, spatial resolution, and computational cost.`,
-    links:       [],
-    collab:      '',
+    collab:      'PhotonicSensors & Algorithms S.L. · University of Valencia',
   },
   // ─── ADD ENTRIES BELOW ────────────────────────────────────────
   // {
